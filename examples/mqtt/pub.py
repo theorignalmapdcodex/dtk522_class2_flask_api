@@ -42,7 +42,7 @@ try:
             qos=1
         )
         print(f"Published to {topic}: {sensor_data}")
-        time.sleep(5)
+        time.sleep(0.2)
         
 except KeyboardInterrupt:
     print("Stopping publisher...")
