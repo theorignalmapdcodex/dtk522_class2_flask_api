@@ -17,6 +17,8 @@ publisher.on_connect = on_connect
 
 # Connect to public broker
 print("Connecting to broker...")
+
+# (broker, port, keepalive)
 publisher.connect("test.mosquitto.org", 1883, 60)
 publisher.loop_start()
 
@@ -35,14 +37,14 @@ try:
         }
         
         # Publish to topic - using a unique topic to avoid conflicts with other users
-        topic = "pythontest/sensors/living_room"
+        topic = "pythontest/sensors/mysensor"
         publisher.publish(
             topic,
             json.dumps(sensor_data),
             qos=1
         )
         print(f"Published to {topic}: {sensor_data}")
-        time.sleep(0.2)
+        time.sleep(1)
         
 except KeyboardInterrupt:
     print("Stopping publisher...")
