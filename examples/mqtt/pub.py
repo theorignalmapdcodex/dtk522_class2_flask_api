@@ -29,21 +29,29 @@ try:
         
         humidity = round(random.uniform(40.0, 60.0), 1)
         
+        thetext = "DTK522 Class 2 was fun!"
+        
         # Create sample sensor data
         sensor_data = {
             "temperature": temperature,
             "humidity": humidity,
             "timestamp": datetime.now().isoformat()
         }
+        sensor_data1 = {
+            "themessage" : thetext
+        }
         
         # Publish to topic - using a unique topic to avoid conflicts with other users
-        topic = "pythontest/sensors/mysensor"
+        topic = "pythontest/sensors/mydata" #"mysensor"
+
+        
         publisher.publish(
             topic,
-            json.dumps(sensor_data),
+            json.dumps(sensor_data1),
             qos=1
         )
-        print(f"Published to {topic}: {sensor_data}")
+        print(f"Published to {topic}: {sensor_data1}")
+        
         time.sleep(1)
         
 except KeyboardInterrupt:
