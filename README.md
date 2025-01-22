@@ -1,5 +1,7 @@
 # DESIGNTK 522 – Design Technology Core II
 
+### Cloned by Michael Dankwah Agyeman-Prempeh on Wed 22 Jan 25
+
 ## Week 2 Examples - Communication Protocols
 
 - [OSC](./examples/osc)
